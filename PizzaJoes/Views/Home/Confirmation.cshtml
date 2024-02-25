@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    p {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+</style>
+
+<h2>Order Confirmation</h2>
+
+<p style="background-color:limegreen">Your order has been placed successfully!</p>
+<p>Order ID: @DateTime.Now.Ticks</p> <!-- Simplified example for generating an order ID -->
+<p>Pizza Type: @ViewBag.PizzaType</p>
+<p>Size: @ViewBag.Size</p>
+<p>Quantity: @ViewBag.Quantity</p>
+<p>Total Price: @ViewBag.TotalPrice</p>

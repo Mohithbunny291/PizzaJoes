@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Order Checkout";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+    }
+
+    p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type=hidden], button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<h2>Order Checkout</h2>
+
+<p>Pizza Type: @ViewBag.PizzaType</p>
+<p>Size: @ViewBag.Size</p>
+<p>Quantity: @ViewBag.Quantity</p>
+<p>Total Price: $@ViewBag.TotalPrice</p>
+
+<form asp-action="Confirmation">
+    <input type="hidden" name="pizzaType" value="@ViewBag.PizzaType">
+    <input type="hidden" name="size" value="@ViewBag.Size">
+    <input type="hidden" name="quantity" value="@ViewBag.Quantity">
+    <input type="hidden" name="totalPrice" value="@ViewBag.TotalPrice">
+    <button type="submit">Confirm Order</button>
+</form>
